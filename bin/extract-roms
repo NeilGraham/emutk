@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+python_cmd=python3
+if [[ "$OSTYPE" == "msys" ]];
+then
+    python_cmd=python
+fi
+
+$python_cmd $SCRIPT_DIR/../extract_roms.py "$@"
